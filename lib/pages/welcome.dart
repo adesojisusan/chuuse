@@ -18,6 +18,8 @@ class WelcomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
+                      
+                      //This is the start of the chuuse logo on the welcome page
                     Container(
                       width: 180.0,
                       padding: EdgeInsets.only(left: 20, right: 20),
@@ -26,6 +28,8 @@ class WelcomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(30)),
                       child: Image.asset('assets/images/logo.jpg'),
                     ),
+                    //This is the end of the chuuse logo
+
                     Container(
                         child: SizedBox(
                       height: 250.0,
