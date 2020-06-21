@@ -1,4 +1,4 @@
-import 'package:chuuse/courseClasses/classMyCourses.dart';
+
 import 'package:chuuse/custom_widgets/Coursecard.dart';
 import 'package:chuuse/pages/navbar.dart';
 import 'package:flutter/material.dart';
