@@ -1,4 +1,5 @@
 import 'package:chuuse/courseClasses/classMyCourses.dart';
+import 'package:chuuse/custom_widgets/Coursecard.dart';
 import 'package:chuuse/pages/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -9,74 +10,6 @@ class LearnPage extends StatefulWidget {
 }
 
 class _LearnPageState extends State<LearnPage> {
-  List<MyCourses> mycourse = [];
-
-  Widget myCoursesCard(mycourse) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15, right: 15, top: 10),
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            CourseCards(
-              school: 'Convenant University',
-              course: 'Computer Science',
-              progressText: 'You\'re making progress',
-              progress: LinearPercentIndicator(
-                width: 320,
-                lineHeight: 7.0,
-                percent: 0.5,
-                linearStrokeCap: LinearStrokeCap.roundAll,
-                backgroundColor: Colors.grey[400],
-                progressColor: Colors.green,
-              ),
-              duration: '50m',
-            ),
-            CourseCards(
-              school: 'Babcock University',
-              course: 'Human Nutrition',
-              progressText: 'You\'re making progress',
-              progress: LinearPercentIndicator(
-                width: 320,
-                lineHeight: 7.0,
-                percent: 0.2,
-                linearStrokeCap: LinearStrokeCap.roundAll,
-                backgroundColor: Colors.grey[400],
-                progressColor: Colors.yellow,
-              ),
-              duration: '1h 30m',
-            ),
-            CourseCards(
-              school: 'Convenant University',
-              course: 'Computer Science',
-              progressText: 'You\'re making progress',
-              progress: LinearPercentIndicator(
-                width: 320,
-                lineHeight: 7.0,
-                percent: 0.5,
-                linearStrokeCap: LinearStrokeCap.roundAll,
-                backgroundColor: Colors.grey[400],
-                progressColor: Colors.green,
-              ),
-            ),
-            CourseCards(
-              school: 'josh university',
-              course: 'Computer Science',
-              progressText: 'You\'re making progress',
-              progress: LinearPercentIndicator(
-                width: 320,
-                lineHeight: 7.0,
-                percent: 0.5,
-                linearStrokeCap: LinearStrokeCap.roundAll,
-                backgroundColor: Colors.grey[400],
-                progressColor: Colors.green,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,80 +45,69 @@ class _LearnPageState extends State<LearnPage> {
       //This is the end of the App Bar
 
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/bg1.png'), fit: BoxFit.fill),
-        ),
-        child: Column(
-          children:
-              mycourse.map((mycourse) => myCoursesCard(mycourse)).toList(),
-        ),
-      ),
-    );
-  }
-}
-
-class CourseCards extends StatelessWidget {
-  final String school;
-  final String course;
-  final String progressText;
-  final LinearPercentIndicator progress;
-  final Divider divider;
-  final String duration;
-  final String timeLeft;
-  final Widget icon;
-  const CourseCards({
-    Key key,
-    this.school,
-    this.course,
-    this.duration,
-    this.divider,
-    this.icon,
-    this.progress,
-    this.progressText,
-    this.timeLeft,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 12),
-      width: 390,
-      height: 250,
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
-        child: Card(
-            child: Padding(
-              padding: const EdgeInsets.only(left:10,right:10),
-              child: Stack(children: <Widget>[
-          Text(
-              school,
-              style: TextStyle(fontSize: 20.0),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/bg1.png'), fit: BoxFit.fill),
           ),
-          Positioned(right: 20, child: Icon(Icons.list)),
-          SizedBox(height: 0),
-          Positioned(
-                bottom: 170,
-                child: Text(course,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30))),
-          SizedBox(height: 20),
-          Positioned(
-                bottom: 120,
-                child: Text(
-                  progressText,
-                  style: TextStyle(fontSize: 15),
-                )),
-          Positioned(bottom: 100, child: progress),
-          Positioned(
-                bottom: 70,
-                child: Text(
-                  duration,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                )),
-                Positioned(bottom:70,right:220,child: Text('to go in week 1')),
-                Positioned(right:25,bottom:50,child: Icon(Icons.exit_to_app,color: Colors.teal,size: 40,))
-        ]),
-            )),
-      );
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+            //this is a course cards
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: <Widget>[
+                     Padding(
+                       padding: const EdgeInsets.symmetric(vertical: 10),
+                       child: CourseCard(
+                        school: 'Convenant University',
+                        course: 'Computer Science',
+                        duration: '50m',
+                        progress: LinearPercentIndicator(
+                            width: 350,
+                            lineHeight: 7,
+                            percent: 0.5,
+                            linearStrokeCap: LinearStrokeCap.roundAll,
+                            backgroundColor: Colors.grey[400],
+                            progressColor: Colors.green),
+                    ),
+                     ),
+                     
+                  
+
+                  //this is a course cards
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: CourseCard(
+                      school: 'Babcock University',
+                      course: 'Human Nutrition',
+                      duration: '1h 30m',
+                      progress: LinearPercentIndicator(
+                          width: 350,
+                          lineHeight: 7,
+                          percent: 0.3,
+                          linearStrokeCap: LinearStrokeCap.roundAll,
+                          backgroundColor: Colors.grey[400],
+                          progressColor: Colors.yellow),
+                    ),
+                  ),
+                  
+                  //another course card
+                   CourseCard(
+                      school: 'School Of Creative Arts',
+                      course: 'Learning Basic Design',
+                      duration: '1h 15m',
+                      progress: LinearPercentIndicator(
+                          width: 350,
+                          lineHeight: 7,
+                          percent: 0.1,
+                          linearStrokeCap: LinearStrokeCap.roundAll,
+                          backgroundColor: Colors.grey[400],
+                          progressColor: Colors.red),
+                    ),
+                ],
+              ),
+            ),
+          )),
+    );
   }
 }
