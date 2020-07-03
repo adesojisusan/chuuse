@@ -1,6 +1,8 @@
 import 'package:chuuse/pages/explorePage.dart';
 import 'package:chuuse/pages/learn_page.dart';
+import 'package:chuuse/pages/loginpage.dart';
 import 'package:chuuse/pages/navbar.dart';
+import 'package:chuuse/pages/searchBox.dart';
 import 'package:chuuse/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,7 @@ class ChuuseApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: MyHomePage(),
+      home: LoginPage(),
     );
   }
 }
