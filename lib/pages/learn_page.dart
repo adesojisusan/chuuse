@@ -1,5 +1,7 @@
 
 import 'package:chuuse/custom_widgets/Coursecard.dart';
+import 'package:chuuse/custom_widgets/coursecontentItem.dart';
+import 'package:chuuse/pages/courseContent.dart';
 import 'package:chuuse/pages/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';

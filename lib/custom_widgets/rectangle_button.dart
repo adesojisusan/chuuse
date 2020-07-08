@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-//this is the rounded button
-class RoundedButton extends StatelessWidget {
+//this is the rectangle button
+class RectangleButton extends StatelessWidget {
     final String text;
   final Function press;
   final double fontsize;
   final Color color;
 
-  const RoundedButton({
+  const RectangleButton({
     Key key,
     this.text,
     this.press,
@@ -23,17 +23,11 @@ class RoundedButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.circular(30),
-            boxShadow: [
-              BoxShadow(
-            offset: Offset(2, 5),
-            blurRadius: 4,
-            color: Colors.black.withOpacity(.2))
-            ]
+            borderRadius: BorderRadius.circular(5)
             ),
         child: Text(
           text,
-          style: TextStyle(fontSize: fontsize, color: Colors.white),
+          style: TextStyle(fontSize: fontsize, color: Colors.black),
         ),
       ),
     );

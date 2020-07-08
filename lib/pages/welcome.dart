@@ -1,4 +1,6 @@
 import 'package:chuuse/custom_widgets/Rounded_Button.dart';
+import 'package:chuuse/pages/loginpage.dart';
+import 'package:chuuse/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -53,6 +55,7 @@ class WelcomePage extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 4,
                 child: RoundedButton(
+                  press: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>LoginPage())),
                   text: 'LOGIN',
                   color: Colors.teal,
                   fontsize: 20.0,
@@ -65,6 +68,7 @@ class WelcomePage extends StatelessWidget {
               ),
               SizedBox(height: 10.0),
               RoundedButton(
+                press: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>SignUpPage())),
                 text: 'CREATE AN ACCOUNT',
                 fontsize: 20.0,
                 color: Colors.pinkAccent[400],

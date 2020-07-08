@@ -1,3 +1,6 @@
+import 'package:chuuse/pages/Downloadpage.dart';
+import 'package:chuuse/pages/Recommended.dart';
+import 'package:chuuse/pages/profilePage.dart';
 import 'package:chuuse/pages/explorePage.dart';
 import 'package:chuuse/pages/learn_page.dart';
 import 'package:chuuse/pages/loginpage.dart';
@@ -106,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Widget> _buildScreens() {
-    return [ExplorePage(), LoginPage(), LearnPage(), LearnPage(), LearnPage()];
+    return [ExplorePage(), Recommended(), LearnPage(), Download(), Profile()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
