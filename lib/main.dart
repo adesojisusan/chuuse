@@ -3,6 +3,7 @@
 import 'package:chuuse/pages/navbar.dart';
 import 'package:chuuse/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:chuuse/pages/videoPlayer.dart';
 
 void main() {
   runApp(ChuuseApp());
@@ -16,7 +17,7 @@ class ChuuseApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: MyHomePage(),
+      home: ChewieDemo(),
     );
   }
 }
