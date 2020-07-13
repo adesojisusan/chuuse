@@ -17,7 +17,7 @@ class ChuuseApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: ChewieDemo(),
+      home: MyHomePage(),
     );
   }
 }
